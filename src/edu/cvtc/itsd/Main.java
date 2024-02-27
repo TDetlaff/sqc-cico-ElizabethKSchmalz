@@ -261,6 +261,7 @@ public class Main {
     panelMain.add(fieldNumber);
 
     JButton updateButton = new JButton("Update");
+    JButton(update);
     updateButton.setAlignmentX(JComponent.CENTER_ALIGNMENT);
     updateButton.addActionListener(new Update());
     updateButton.setForeground(Color.green);
