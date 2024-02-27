@@ -6,10 +6,13 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 1. Build and run CiCo.
 2. Enter 00000000 into the field and click Update.
 3. Wait 11 seconds.
+4. next should set up for next customer
 
 ## Expected results:
 * The status panel should appear after step 2.
 * The main panel should appear after step 3.
+
+
 
 # Module 2: Sample test for invalid card numbers.
 
