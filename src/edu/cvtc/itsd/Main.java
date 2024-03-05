@@ -4,6 +4,8 @@ package edu.cvtc.itsd;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.sql.*;
 import java.util.TimerTask;
 import javax.swing.*;
@@ -43,6 +45,7 @@ public class Main {
     {
       if (fb.getDocument() != null) {
         super.insertString(fb, offset, stringToAdd, attr);
+        checkAndProcessCard();
       }
       else {
         Toolkit.getDefaultToolkit().beep();
@@ -55,9 +58,17 @@ public class Main {
     {
       if (fb.getDocument() != null) {
         super.replace(fb, offset, lengthToDelete, stringToAdd, attr);
+        checkAndProcessCard();
       }
       else {
         Toolkit.getDefaultToolkit().beep();
+      }
+    }
+
+    // Method to check the length of the card number and process if it's complete
+    private void checkAndProcessCard() {
+      if (fieldNumber.getText().length() == MAX_LENGTH) {
+        processCard();
       }
     }
   }
@@ -259,13 +270,6 @@ public class Main {
     fieldNumber.setBackground(Color.green);
     fieldNumber.setForeground(Color.magenta);
     panelMain.add(fieldNumber);
-
-    JButton updateButton = new JButton("Update");
-    JButton(update);
-    updateButton.setAlignmentX(JComponent.CENTER_ALIGNMENT);
-    updateButton.addActionListener(new Update());
-    updateButton.setForeground(Color.green);
-    panelMain.add(updateButton);
 
     panelMain.add(Box.createVerticalGlue());
 
